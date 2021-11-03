@@ -1,0 +1,4 @@
+$Trigger=New-ScheduledTaskTrigger -At 08:20pm -Daily
+$User="NT AUTHORITY\SYSTEM"
+$Action=New-ScheduledTaskAction -Execute "powershell.exe" -Argument "C:\Users\neoh\Documents\ping.ps1"
+Register-ScheduledTask -TaskName "Ping_Daily" -Trigger $Trigger -User $User -Action $Action -RunLevel Highest -Force
